@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="892.0" prefWidth="1490.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ChatPageController">
+   <top>
+      <HBox prefHeight="69.0" prefWidth="1120.0" style="-fx-background-color: #2A2F32;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Circle fx:id="profileAvatar" fill="#2197ff" radius="21.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Text fx:id="name" fill="#ebebeb" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <JFXButton focusTraversable="false" prefHeight="34.0" ripplerFill="TRANSPARENT" style="-fx-background-color: none;" text="" textAlignment="JUSTIFY" textFill="TRANSPARENT">
+                     <graphic>
+                        <FontAwesomeIcon fill="#9fa2a5" glyphName="SEARCH" size="22px" wrappingWidth="33.0" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton focusTraversable="false" onMouseClicked="#openDropDown" prefHeight="50.0" prefWidth="50.0" ripplerFill="#20272b" style="-fx-background-radius: 40px;" text="">
+                     <graphic>
+                        <FontAwesomeIcon fill="#d0d0d0" glyphName="BARS" selectionFill="#ff0d0d" size="28px" text="" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets right="25.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="1120.0" style="-fx-background-color: #1E2428;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton focusTraversable="false" prefHeight="50.0" prefWidth="50.0" ripplerFill="#2f3132" style="-fx-background-radius: 40px;" text="">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="PAPERCLIP" size="29px" />
+               </graphic>
+            </JFXButton>
+            <JFXButton focusTraversable="false" layoutX="20.0" layoutY="23.0" prefHeight="50.0" prefWidth="50.0" ripplerFill="#2f3132" style="-fx-background-radius: 40px;" text="">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CAMERA_RETRO" size="28px" />
+               </graphic>
+               <HBox.margin>
+                  <Insets top="2.0" />
+               </HBox.margin>
+            </JFXButton>
+            <AnchorPane prefHeight="200.0" prefWidth="791.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" layoutX="27.0" layoutY="13.0" prefHeight="51.0" prefWidth="843.0" style="-fx-background-color: #323739; -fx-border-radius: 50px; -fx-background-radius: 50px;">
+                     <children>
+                        <JFXButton focusTraversable="false" onAction="#sendChat" prefHeight="50.0" prefWidth="62.0" ripplerFill="TRANSPARENT" style="-fx-background-color: none;" text="">
+                           <graphic>
+                              <FontAwesomeIcon fill="#d0d0d0" glyphName="PAPER_PLANE" selectionFill="#ff0d0d" size="22px" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <TextField fx:id="chatInput" onAction="#sendChat" prefHeight="40.0" prefWidth="273.0" promptText="Search a chat" style="-fx-background-color: none; -fx-text-fill: #fff;" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Segoe UI" size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <ScrollPane fx:id="chatScrollpane" fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" style="-fx-background-color: #131C21; -fx-background: #131C21;" vvalue="1.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="chatBox" prefWidth="1102.0" spacing="5.0">
+               <padding>
+                  <Insets bottom="5.0" left="30.0" top="30.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

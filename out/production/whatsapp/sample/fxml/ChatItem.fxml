@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="chatItem" alignment="CENTER_LEFT" prefWidth="200.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ChatItemController">
+   <children>
+      <AnchorPane fx:id="chatItemContentBox" maxWidth="260.0" prefWidth="260.0" styleClass="msg_item">
+         <children>
+            <Label fx:id="msgLabel" prefWidth="295.0" text="Something longgggggggggggggggggggggg message asdj aksjhjdkjahjkjsd jlkajslkdjliasjdjlokasjdlkjaskld sadoa hsieuiaiku shdkjaskldhkjashjkd askjhaskjdhas" textFill="WHITE" wrapText="true">
+               <padding>
+                  <Insets bottom="6.0" left="12.0" top="6.0" />
+               </padding>
+               <font>
+                  <Font name="Ebrima" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="timeLabel" layoutX="242.0" layoutY="72.0" prefWidth="50.0" text="2:44 pm" textFill="#d0d0d0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="265.0" layoutY="10.0" onMouseClicked="#openDropDown" pickOnBounds="true" preserveRatio="true" styleClass="dropdown_menu" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="10.0">
+               <image>
+                  <Image url="@../images/output-onlinepngtools%20(1).png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="1.0" top="5.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets right="30.0" />
+   </padding>
+</HBox>

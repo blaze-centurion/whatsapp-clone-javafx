@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="892.0" prefWidth="1490.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ClientUiController">
+   <children>
+      <BorderPane fx:id="chatBorderPane" prefHeight="892.0" prefWidth="1490.0" style="-fx-background-color: #131C21;" stylesheets="@../css/style.css">
+         <left>
+            <StackPane fx:id="sidebar" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefWidth="370.0" style="-fx-background-color: #131C21; -fx-border-color: #848788; -fx-border-width: 0px 1px 0px 0px;" StackPane.alignment="CENTER_LEFT">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="69.0" prefWidth="368.0" style="-fx-background-color: #2A2F32;">
+                           <children>
+                              <Circle fx:id="userProfileAvatar" fill="#1f93ff00" onMouseClicked="#openProfileSetting" radius="21.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Circle>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="69.0" prefWidth="310.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton focusTraversable="false" onAction="#openAddContact" prefHeight="50.0" prefWidth="50.0" ripplerFill="#20272b" style="-fx-background-radius: 40px;" text="">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#dddddd" glyphName="PLUS" size="27px" text="" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets top="2.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton focusTraversable="false" layoutX="211.0" layoutY="31.0" prefHeight="50.0" prefWidth="50.0" ripplerFill="#20272b" style="-fx-background-radius: 40px;" text="">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#d0d0d0" glyphName="BARS" selectionFill="#ff0d0d" size="28px" text="" />
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutY="69.0" prefHeight="55.0" prefWidth="368.0" style="-fx-border-color: #848788; -fx-border-width: 0px 0px 1px 0px;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="337.0" style="-fx-background-color: #323739; -fx-border-radius: 50 50 50 50;">
+                                 <children>
+                                    <JFXButton focusTraversable="false" onAction="#searchChatItem" prefHeight="34.0" ripplerFill="TRANSPARENT" text="">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#9fa2a5" glyphName="SEARCH" size="22px" wrappingWidth="33.0" />
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <TextField fx:id="searchChatInput" focusTraversable="false" onAction="#searchChatItem" onKeyPressed="#searchChatItem" prefHeight="40.0" prefWidth="273.0" promptText="Search a chat" style="-fx-background-color: none; -fx-text-fill: #fff;">
+                                       <font>
+                                          <Font name="Segoe UI" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="7.0" top="7.0" />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <VBox alignment="CENTER" layoutY="124.0" prefHeight="768.0" prefWidth="365.0">
+                           <children>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="736.0" prefWidth="365.0" style="-fx-background-color: #131C21; -fx-background: #131C21;" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <VBox fx:id="contactListBox" prefHeight="749.0" prefWidth="365.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="addContactPane" prefHeight="894.0" prefWidth="370.0" style="-fx-background-color: #131C21; -fx-border-color: #848788; -fx-border-width: 0px 1px 0px 0px;" translateX="-370.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" layoutX="-1.0" prefHeight="69.0" prefWidth="368.0" spacing="10.0" style="-fx-background-color: #2A2F32;">
+                           <children>
+                              <JFXButton focusTraversable="false" onAction="#backToContact" prefHeight="50.0" prefWidth="50.0" ripplerFill="#20272b" style="-fx-background-radius: 40px;" text="">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#dddddd" glyphName="ARROW_LEFT" size="27px" />
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <Label text="New Contact" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutY="69.0" prefHeight="55.0" prefWidth="368.0" style="-fx-border-color: #848788; -fx-border-width: 0px 0px 1px 0px;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="337.0" style="-fx-background-color: #323739; -fx-border-radius: 50 50 50 50;">
+                                 <children>
+                                    <JFXButton focusTraversable="false" onAction="#searchContact" prefHeight="34.0" ripplerFill="TRANSPARENT" text="">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#9fa2a5" glyphName="SEARCH" size="22px" wrappingWidth="33.0" />
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <TextField fx:id="contactInput" focusTraversable="false" onAction="#searchContact" prefHeight="40.0" prefWidth="273.0" promptText="Search a contact" style="-fx-background-color: none; -fx-text-fill: #fff;">
+                                       <font>
+                                          <Font name="Segoe UI" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="7.0" top="7.0" />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <VBox alignment="CENTER" layoutY="124.0" prefHeight="768.0" prefWidth="365.0">
+                           <children>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="736.0" prefWidth="365.0" style="-fx-background-color: #131C21; -fx-background: #131C21;" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <VBox fx:id="addContactListBox" prefHeight="749.0" prefWidth="365.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="profileSettingPane" prefHeight="894.0" prefWidth="370.0" style="-fx-background-color: #131C21; -fx-border-color: #848788; -fx-border-width: 0px 1px 0px 0px;" translateX="-370.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" layoutX="-1.0" prefHeight="69.0" prefWidth="368.0" spacing="10.0" style="-fx-background-color: #2A2F32;">
+                           <children>
+                              <JFXButton focusTraversable="false" onAction="#backToContactForProfile" prefHeight="50.0" prefWidth="50.0" ripplerFill="#20272b" style="-fx-background-radius: 40px;" text="">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#dddddd" glyphName="ARROW_LEFT" size="27px" />
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <Label text="Profile" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <VBox alignment="CENTER" layoutY="71.0" prefHeight="825.0" prefWidth="365.0">
+                           <children>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="736.0" prefWidth="365.0" style="-fx-background-color: #131C21; -fx-background: #131C21;" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <VBox fx:id="addContactListBox1" prefHeight="817.0" prefWidth="365.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="172.0" prefWidth="365.0">
+                                             <children>
+                                                <Circle fx:id="profileSettingUserAvatar" fill="#ff1f1f" radius="70.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <TextField fx:id="whatsappIdProfileLabel" alignment="CENTER" editable="false" focusTraversable="false" prefWidth="271.0" style="-fx-background-color: none; -fx-text-fill: #ffffff;" text="Whatsapp Id">
+                                             <font>
+                                                <Font name="Calibri Italic" size="20.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="DEFAULT" />
+                                             </cursor>
+                                          </TextField>
+                                          <AnchorPane prefHeight="169.0" prefWidth="365.0">
+                                             <children>
+                                                <Label layoutX="33.0" layoutY="46.0" style="-fx-text-fill: #14e8d6;" text="Your Name" textFill="#14e8d6">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox alignment="BOTTOM_LEFT" layoutX="33.0" layoutY="81.0" prefHeight="51.0" prefWidth="300.0" styleClass="profileInput">
+                                                   <children>
+                                                      <TextField fx:id="profileNameInput" editable="false" focusTraversable="false" prefWidth="271.0" promptText="Your Name" style="-fx-background-color: none; -fx-text-fill: #ffffff;">
+                                                         <font>
+                                                            <Font name="Calibri Italic" size="20.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <FontAwesomeIcon fx:id="editableIcon" fill="#828689" glyphName="PENCIL" onMouseClicked="#toggleEditable" size="25px">
+                                                         <HBox.margin>
+                                                            <Insets bottom="6.0" />
+                                                         </HBox.margin>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </FontAwesomeIcon>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </left>
+      </BorderPane>
+   </children>
+</StackPane>

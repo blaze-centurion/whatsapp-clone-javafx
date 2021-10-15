@@ -1,0 +1,115 @@
+.contact_item
+{
+    -fx-background-color:  #131C21;
+    -fx-border-color: #848788;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.contact_item:hover
+{
+    -fx-background-color: #2D3134;
+}
+
+.dropdown-item
+{
+    -fx-background-color: #2A2F32;
+}
+.dropdown-item:hover
+{
+    -fx-background-color: #ff0000;
+}
+
+.dropdown_menu
+{
+    -fx-opacity: 0;
+}
+.contact_item:hover .dropdown_menu
+{
+    -fx-opacity: 1;
+}
+
+/*.msg_item .dropdown_menu
+{
+    -fx-background-color: red;
+}*/
+.msg_item:hover .dropdown_menu
+{
+    -fx-opacity: 1;
+}
+.msg_item
+{
+    -fx-background-radius: 10px;
+    -fx-background-color: #262D31;
+}
+.msg_item.me
+{
+    -fx-background-color: #056162;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #343A3D;
+    -fx-background-radius: 0;
+    -fx-width: 5px;
+}
+
+.parent{
+    -fx-background-color: transparent;
+}
+.pane{
+   -fx-background-color: #2196f3;
+}
+.trans-btn-white-border{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-text-fill: whitesmoke;
+}
+.white-pane{
+    -fx-background-color: #ffffff;
+}
+.blue-panel{
+    -fx-background-color: #151928;
+}
+.tf_box{
+    -fx-background-color: transparent;
+    -fx-border-color: #DEDEE4;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-fill: #fff;
+}
+.tf{
+    -fx-background-color: transparent;
+}
+.blue-btn{
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #fff;
+}
+
+.profileInput
+{
+    -fx-border-color: #00AF9C;
+    -fx-border-width: 0px 0px 1px 0px;
+}
